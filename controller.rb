@@ -9,3 +9,8 @@ get '/students' do
   @students = Student.all()
   erb(:index)
 end
+
+#New
+get '/students/new' do
+  erb(:new)
+end
