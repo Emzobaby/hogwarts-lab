@@ -3,13 +3,13 @@ require_relative('../db/sql_runner')
 class Student
 
   attr_reader :id
-  attr_accessor :first_name, :last_name, :house, :age
+  attr_accessor :first_name, :last_name, :house_id, :age
 
   def initialize(options)
     @id = options["id"] if options["id"]
     @first_name = options["first_name"]
     @last_name = options["last_name"]
-    @house = options["house"]
+    @house_id = options["house_id"]
     @age = options["age"]
   end
 
@@ -42,6 +42,14 @@ class Student
   def self.delete_all
     sql = "DELETE FROM students"
     SqlRunner.run(sql)
+  end
+
+  def house
+    sql = "SELECT*FROM houses WHERE id = $1"
+    values = [@house_id]
+    houses = SqlRunner.run(sql, values)
+    result = House.new(houses.first)
+    return result
   end
 
 end
