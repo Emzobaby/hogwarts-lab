@@ -12,3 +12,10 @@ get '/students/new' do
   @houses = House.all
   erb(:"students/new")
 end
+
+#create
+post '/students' do
+  @student = Student.new(params)
+  @student.save
+  erb(:"students/create")
+end

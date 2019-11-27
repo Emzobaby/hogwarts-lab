@@ -1,13 +1,13 @@
 <form action="/students" method="POST">
   <label for="first_name">First Name: </label>
     <input type="text" name="first_name" id="first-name">
-  <label for="last_name">First Name: </label>
+  <label for="last_name">Last Name: </label>
     <input type="text" name="last_name" id="last-name">
   <label for="house-select">Select a House: </label>
-    <select name="house" id="house-select">
+    <select name="house_id" id="house-select">
       <option selected disabled value="">Sorting Hat!</option>
       <% for house in @houses %>
-      <option value="<%= house.name %>"><%= house.name %></option>
+      <option value="<%= house.id %>"><%= house.name %></option>
       <% end %>
     </select>
   <label for="age">Age: </label>
