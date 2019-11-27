@@ -1,3 +1,4 @@
+require ('pry')
 require_relative('../models/student')
 
 student1 = Student.new({
@@ -23,3 +24,6 @@ student3 = Student.new({
   "age" => 13
   })
   student3.save()
+
+binding.pry
+nil 
