@@ -3,6 +3,7 @@ require_relative('../models/student')
 require_relative('../models/house')
 
 Student.delete_all
+House.delete_all
 
 student1 = Student.new({
   "first_name" => "Harry",
@@ -47,7 +48,7 @@ student3 = Student.new({
     "name" => "Hufflepuff",
     "image" => ""
     })
-    house4.save 
+    house4.save
 
 binding.pry
 nil
