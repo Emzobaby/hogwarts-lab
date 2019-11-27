@@ -18,9 +18,9 @@ class Student
   end
 
   def save
-    sql = "INSERT INTO students (first_name, last_name, house, age)
+    sql = "INSERT INTO students (first_name, last_name, house_id, age)
     VALUES ($1, $2, $3, $4) RETURNING id"
-    values = [@first_name, @last_name, @house, @age]
+    values = [@first_name, @last_name, @house_id, @age]
     result = SqlRunner.run(sql, values)
     @id = result[0]["id"].to_i
   end

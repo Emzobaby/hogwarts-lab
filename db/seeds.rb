@@ -7,22 +7,22 @@ House.delete_all
 
 house1 = House.new({
   "name" => "Gryfindor",
-  "image" => ""
+  "image" => "/images/gryfindor.jpg"
   })
   house1.save
 house2 = House.new({
   "name" => "Slytherin",
-  "image" => ""
+  "image" => "/images/slytherin.jpg"
   })
   house2.save
 house3 = House.new({
   "name" => "Ravenclaw",
-  "image" => ""
+  "image" => "/images/ravenclaw.jpg"
   })
   house3.save
 house4 = House.new({
   "name" => "Hufflepuff",
-  "image" => ""
+  "image" => "/images/hufflepuff.jpg"
   })
   house4.save
 
@@ -37,7 +37,7 @@ student1 = Student.new({
 student2 = Student.new({
   "first_name" => "Ron",
   "last_name" => "Weasley",
-  "house" => house1.id,
+  "house_id" => house1.id,
   "age" => 12
   })
   student2.save()
@@ -45,7 +45,7 @@ student2 = Student.new({
 student3 = Student.new({
   "first_name" => "Draco",
   "last_name" => "Malfoy",
-  "house" => house2.id,
+  "house_id" => house2.id,
   "age" => 13
   })
   student3.save()

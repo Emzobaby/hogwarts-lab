@@ -1,0 +1,6 @@
+<h2><%= @house.name %></h2>
+<h3>Students</h3>
+<% for student in @house.students %>
+<p>Name: <%= student.pretty_name %></p>
+<p>Age: <%= student.age %></p>
+<% end %>

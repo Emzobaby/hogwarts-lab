@@ -5,10 +5,10 @@
     <input type="text" name="last_name" id="last-name">
   <label for="house-select">Select a House: </label>
     <select name="house" id="house-select">
-      <option value="Gryfindor">Gryfindor</option>
-      <option value="Slytherin">Slytherin</option>
-      <option value="Ravenclaw">Ravenclaw</option>
-      <option value="Hufflepuff">Hufflepuff</option>
+      <option selected disabled value="">Sorting Hat!</option>
+      <% for house in @houses %>
+      <option value="<%= house.name %>"><%= house.name %></option>
+      <% end %>
     </select>
   <label for="age">Age: </label>
   <input type="number" id="age" name="age">

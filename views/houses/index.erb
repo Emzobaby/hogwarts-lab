@@ -1,0 +1,12 @@
+<h1>All Houses in Hogwarts</h1>
+
+<% for house in @houses %>
+<div class="grid-container">
+  <div class="grid-item">
+  <p><img src="<%= house.image %>" alt="house badge" height="75px" width="75px"></p>
+  <p>Name: <%= house.name %> </p>
+  <p><a href="/houses/<%= house.id %>">View Students</a></p>
+  <hr/>
+  </div>
+    </div>
+  <% end %>
