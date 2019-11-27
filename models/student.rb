@@ -13,6 +13,10 @@ class Student
     @age = options["age"]
   end
 
+  def pretty_name
+    return "#{first_name} #{last_name}"
+  end
+
   def save
     sql = "INSERT INTO students (first_name, last_name, house, age)
     VALUES ($1, $2, $3, $4) RETURNING id"
@@ -33,6 +37,11 @@ class Student
     students = SqlRunner.run(sql, values)
     result = Student.new(students.first)
     return result
+  end
+
+  def self.delete_all
+    sql = "DELETE FROM students"
+    SqlRunner.run(sql)
   end
 
 end
